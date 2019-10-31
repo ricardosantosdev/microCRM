@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}Register now{% endblock title %}
+
+{% block content %}
+<form method="POST">
+        {% csrf_token %}
+        <div>
+            <label>Username: </label>
+            {{form_user.username}}
+            {{form_user.username.errors}}
+        </div>
+    
+        <div>
+            {{form_user.password1.errors}}
+            <label>Password: </label>
+            {{form_user.password1}}
+        </div>
+    
+        <div>
+            <label>Confirm password: </label>
+            {{form_user.password2}}
+            {{form_user.password2.errors}}
+        </div>
+    
+        <div>
+            <input type="submit" value="Register">
+        </div>
+        <div>
+            <a href="{% url 'login_user' %}">Login</a>
+        </div>
+    </form>
+{% endblock content %}

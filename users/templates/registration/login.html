@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}Login{% endblock title %}
+
+{% block content %}
+<form method="POST">
+    {% csrf_token %}
+    <div>
+        <label>Username: </label>
+        {{form_login.username}}
+        {{form_login.username.errors}}
+    </div>
+
+    <div>
+        <label>Password: </label>
+        {{form_login.password}}
+        {{form_login.password.errors}}
+    </div>
+
+    <div>
+        <input type="submit" value="Login">
+    </div>
+    <div>
+        <a href="{% url 'register_user' %}">Register</a>
+    </div>
+</form>
+{% endblock content %}

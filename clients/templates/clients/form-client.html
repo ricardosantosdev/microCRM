@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block title %}Register new client{% endblock %}
+
+{% block content %}
+<form method="POST">
+    {% csrf_token %}
+    <div>
+        <label>Name</label>
+        {{ form.name }}
+        {{ form.name.errors }}
+    </div>
+    <div>
+        <label>Last Name</label>
+        {{ form.last_name }}
+        {{ form.last_name.errors }}
+    </div>
+    <div>
+        <label>Gender</label>
+        {{ form.gender }}
+        {{ form.gender.errors }}
+    </div>
+    <div>
+        <label>Email</label>
+        {{ form.email }}
+        {{ form.email.errors }}
+    </div>
+    <div>
+        <label>Phone</label>
+        {{ form.phone }}
+        {{ form.phone.errors }}
+    </div>
+    <div>
+        <label>Zip Code</label>
+        {{ form.zip_code }}
+        {{ form.zip_code.errors }}
+    </div>
+    <div>
+        <label>Street Place</label>
+        {{ form.street }}
+        {{ form.street.errors }}
+    </div>
+    <div>
+        <input type="submit" value="Done">
+    </div>
+</form>
+{% endblock %}

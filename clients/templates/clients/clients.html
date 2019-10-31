@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %}Clients{% endblock %}
+
+{% block content %}
+    <div>
+        <table border="1">
+            <tr>
+                <th>Name</th>
+                <th>Last Name</th>
+                <th>Gender</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Zip Code</th>
+                <th>Street Place</th>
+                <th colspan="2">Manage</th>
+            </tr>
+            {% for client in clients %}
+            <tr>
+                <td>{{ client.name }}</td>
+                <td>{{ client.last_name }}</td>
+                <td>{{ client.get_gender_display }}</td>
+                <td>{{ client.email }}</td>
+                <td>{{ client.phone }}</td>
+                <td>{{ client.zip_code }}</td>
+                <td>{{ client.street }}</td>
+                <td><button type="submit"><a href="{% url 'edit_client' client.id %}">Edit</a></button></td>
+                <td><button type="submit"><a href="{% url 'delete_client' client.id %}">Delete</a></button></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <br>
+    <div>
+        <button type="submit"><a href="{% url 'new_client' %}">Add client</a></button>
+    </div>
+    <div>
+        <a href="{% url 'logout_user' %}">Logout</a>
+    </div>
+{% endblock %}

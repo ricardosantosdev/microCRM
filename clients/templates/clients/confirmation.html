@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}Confirm deletion{% endblock %}
+
+{% block content %}
+<div>
+    <div>
+        <h2>Are you sure you want to remove client {{ client.name }} ?</h2>
+    </div>
+    <div>
+        <hr>
+        <form method="POST">
+            {% csrf_token %}
+            <button type="submit">Delete</button>
+        </form>
+    </div>
+</div>
+
+{% endblock content %}
