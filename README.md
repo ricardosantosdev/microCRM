@@ -5,23 +5,23 @@ PoC de um CRM criado com Django.
 
 1. Clone o repositório para a sua máquina com o comando:
 
-```git clone https://github.com/ricardosantosdev/microCRM.git```
+`git clone https://github.com/ricardosantosdev/microCRM.git`
 
 2. Instale as dependências necessárias:
 
-```pip install -r requirements.txt```
+`pip install -r requirements.txt`
 
 3. Rode o comando para criar as tabelas do banco de dados:
 
-```python manage.py makemigrations```
+`python manage.py makemigrations`
 
 4. Crie as tabelas:
 
-```python manage.py migrate```
+` python manage.py migrate`
 
 5. E finalmente rode a aplicação:
 
-```python manage.py runserver```
+`python manage.py runserver`
 
 ## Notas
 
